@@ -730,6 +730,9 @@ void menuModelSetup(uint8_t event)
             case MM_RF_PROTO_HONTAI:
               lcd_putsiAtt(MODEL_SETUP_2ND_COLUMN+11*FW, y, STR_SUBTYPE_HONTAI, g_model.moduleData[EXTERNAL_MODULE].subType, menuHorizontalPosition==2 ? attr : 0);
               break;
+            case MM_RF_PROTO_BAYANG:
+              lcd_putsiAtt(MODEL_SETUP_2ND_COLUMN+11*FW, y, STR_SUBTYPE_BAYANG, g_model.moduleData[EXTERNAL_MODULE].subType, menuHorizontalPosition==2 ? attr : 0);
+              break;
             case MM_RF_CUSTOM_SELECTED:
               lcd_outdezNAtt(MODEL_SETUP_2ND_COLUMN+14*FW, y, g_model.moduleData[EXTERNAL_MODULE].getMultiProtocol(false), menuHorizontalPosition==2 ? attr : 0, 2);
               lcd_outdezNAtt(MODEL_SETUP_2ND_COLUMN+16*FW, y, g_model.moduleData[EXTERNAL_MODULE].subType, menuHorizontalPosition==3 ? attr : 0, 2);
@@ -789,6 +792,7 @@ void menuModelSetup(uint8_t event)
                   case MM_RF_PROTO_HISKY:
                   case MM_RF_PROTO_SYMAX:
                   case MM_RF_PROTO_KN:
+                  case MM_RF_PROTO_BAYANG:
                     CHECK_INCDEC_MODELVAR(event, g_model.moduleData[EXTERNAL_MODULE].subType, 0, 1);
                     break;
                   case MM_RF_PROTO_CG023:
